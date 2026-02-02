@@ -1,4 +1,4 @@
-# Inference Package
+# `RC` Inference
 
 This folder contains code used for running `RC` decoding. Running this only requires vLLM (and its dependencies): if you do not intend to train models, you do not need to install verl.
 
