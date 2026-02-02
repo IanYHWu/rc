@@ -19,19 +19,20 @@ Generates simple autoregressive rollouts for a given dataset and prompt.
 
 **Sample Command:**
 ```bash
-python -m inference.inference.generate \
+python -m inference.generate \
     --model_path Qwen/Qwen3-4B-Instruct-2507 \
     --dataset_path datasets/hmmt_2025_nov.json \
     --output_path outputs/hmmt_qwen3_4b.json \
     --prompt_path prompts/solution_generation_prompt.txt \
-    --n_rollouts_per_problem 16 \
-    --tp_size 4 \
+    --n_rollouts_per_problem 1 \
+    --tp_size 8 \
     --temperature 0.7 \
     --top_p 0.8
 ```
 
 ### 2. `RC` decoding (`generate_complete.py`)
-Implements `RC` decoding.
+Implements `RC` decoding. Set $H_R$ using `max_thinking_tokens`, $H_S$ using `max_summarization_tokens`, `T` using `max_steps`.
+
 **Sample Command:**
 ```bash
 python -m inference.inference.generate_complete \
@@ -40,9 +41,9 @@ python -m inference.inference.generate_complete \
     --reasoning_prompt_path prompts/reasoning_prompt.txt \
     --summarization_prompt_path prompts/summarization_prompt.txt \
     --output_path outputs/hmmt_qwen3_4b_rc.json \
-    --n 16 \
-    --max_steps 12 \
-    --tp_size 4
+    --n 1 \
+    --max_steps 4 \
+    --tp_size 8
 ```
 
 ### 3. Multi-Model E2E (`generate_complete_multi_model.py`)
@@ -58,9 +59,9 @@ python -m inference.inference.generate_no_summary \
     --dataset_path datasets/hmmt_2025_nov.json \
     --reasoning_prompt_path prompts/self_refine_sci_prompt.txt \
     --output_path outputs/hmmt_qwen3_4b_self_refine.json \
-    --n 16 \
-    --max_steps 12 \
-    --tp_size 4
+    --n 1 \
+    --max_steps 4 \
+    --tp_size 8
 ```
 
 ### 5. S1-style/Budget Forcing "Wait" Continuation (`generate_s1.py`)
@@ -73,9 +74,9 @@ python -m inference.inference.generate_s1 \
     --dataset_path datasets/hmmt_2025_nov.json \
     --reasoning_prompt_path prompts/s1_prompt.txt \
     --output_path outputs/hmmt_qwen3_4b_s1.json \
-    --n 8 \
-    --max_steps 12 \
-    --tp_size 4
+    --n 1 \
+    --max_steps 4 \
+    --tp_size 8
 ```
 
 ## Prompts

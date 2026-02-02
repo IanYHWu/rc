@@ -6,8 +6,8 @@ import time
 import vllm
 from transformers import PreTrainedTokenizer, AutoTokenizer
 
-from reasoning_cache.utils.inference import run_inference, create_messages
-from reasoning_cache.utils.fill_prompt import fill_prompt
+from utils.inference import run_inference, create_messages
+from utils.fill_prompt import fill_prompt
 
 
 def parse_args() -> argparse.Namespace:
