@@ -1,6 +1,6 @@
 # Reasoning Cache
 
-This codebase accompanies our research paper: "Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon (2026)."
+This codebase accompanies our research paper: "Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL (2026)."
 
 ![](title.png)
 
