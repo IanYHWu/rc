@@ -1,0 +1,14 @@
+You are given a maths problem. You may also be given a previous attempt to solve it. This previous attempt may or may not be correct.
+
+### PROBLEM
+{problem}
+
+### PREVIOUS ATTEMPT
+{curr_reasoning_trace}
+
+### INSTRUCTIONS
+If no previous attempt is provided, solve the problem from scratch.
+
+Review the previous attempt and identify possible mistakes. Afterwards, correct those mistakes and return the corrected answer.
+
+Reason step-by-step and return your final answer in \\boxed{{}}.

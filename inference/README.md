@@ -35,7 +35,7 @@ Implements `RC` decoding. Set $H_R$ using `max_thinking_tokens`, $H_S$ using `ma
 
 **Sample Command:**
 ```bash
-python -m inference.inference.generate_complete \
+python -m inference.generate_complete \
     --model_path Qwen/Qwen3-4B-Instruct-2507 \
     --dataset_path datasets/hmmt_2025_nov.json \
     --reasoning_prompt_path prompts/reasoning_prompt.txt \
@@ -51,10 +51,11 @@ Similar to `generate_complete.py`, but allows using different models for the rea
 
 ### 4. Reasoning without Summarization (`generate_no_summary.py`)
 Baseline method: a multi-step reasoning loop where the model sees its previous attempt but no explicit summary is generated.
+The example command below runs self-refine.
 
 **Sample Command:**
 ```bash
-python -m inference.inference.generate_no_summary \
+python -m inference.generate_no_summary \
     --model_path Qwen/Qwen3-4B-Instruct-2507 \
     --dataset_path datasets/hmmt_2025_nov.json \
     --reasoning_prompt_path prompts/self_refine_sci_prompt.txt \
@@ -69,7 +70,7 @@ Implements a budget forcing approach where the model is prompted to "Wait, let m
 
 **Sample Command:**
 ```bash
-python -m inference.inference.generate_s1 \
+python -m inference.generate_s1 \
     --model_path Qwen/Qwen3-4B-Instruct-2507 \
     --dataset_path datasets/hmmt_2025_nov.json \
     --reasoning_prompt_path prompts/s1_prompt.txt \

@@ -1,0 +1,5 @@
+working_dir: /home/asetlur/math-curriculum
+excludes: ["/.git/", "./outputs", "./data", "./core"]
+env_vars:
+  TORCH_NCCL_AVOID_RECORD_STREAMS: "1"
+  VLLM_ATTENTION_BACKEND: "XFORMERS"
