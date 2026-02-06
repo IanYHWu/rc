@@ -28,7 +28,7 @@ pip install liger-kernel
 
 The training configs are located in `training/projects/reasoning_cache/config`, and example scripts can be found in `training/projects/reasoning_cache/scripts`.
 See `reasoning_cache_rl_script_flame.sh` for a script to launch (single-node) `RC` training, and `vanilla_flame.sh` for a script to launch standard GRPO.
-You should be able to launch these scripts directly from command line. We used 1x8xH100 nodes for training.
+You should be able to launch these scripts directly from command line. We used 1x8xH100 nodes for training. These should be launched from inside the `training` folder.
 
 The important `RC`-specific training parameters are:
 - `reasoning_cache.online_rollout_steps`: number of training steps (`T_{train}`).
@@ -39,3 +39,17 @@ The important `RC`-specific training parameters are:
 - `reasoning_cache.summarization_prompt_path`:  summarization prompt (`I_S`).
 - `reasoning_cache.max_thinking_tokens`: max reasoning tokens (`H_R`).
 - `reasoning_cache.max_summary_tokens`: max summarization tokens (`H_S`).
+
+
+## Logging
+
+We support logging via Wandb, using the standard verl functionalities. 
+
+You can enable wandb logging by setting `trainer.logger='[console, wandb]'`, and set the project and experiment names via `trainer.project_name` and `trainer.experiment_name`.
+
+
+## Checkpoints
+
+The model checkpoints are saved in `trainer.save_dir`. They are saved as FSDP checkpoints that can be converted to the HF format using the script located in `scripts/convert_verl_to_hf.sh`.
+
+verl also supports automatic loading from checkpoints by setting `trainer.resume_mode=auto`.
