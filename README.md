@@ -13,6 +13,6 @@ For training code, please see `training` (verl required).
 
 `RCT-4B`: `HerrHruby/RCT-4B`
 
-Stage I Training Set: `HerrHruby/acemath_rl_4b_inst_hard`
+Stage I Training Set: `HerrHruby/RCT-4B-RL-Stage-I`
 
-Stage II Training Set: `HerrHruby/acemath_rl_4b_inst_hard_with_dishsoap`
+Stage II Training Set: `HerrHruby/RCT-4B-RL-Stage-II`
