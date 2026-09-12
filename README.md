@@ -11,7 +11,7 @@ For training code, please see `training` (verl required).
 
 ## Artefacts
 
-`RCT-4B`: `HerrHruby/offline_acemath_rl_4b_inst_hard_with_dishsoap_16k_no_summ_curr_step_120`
+`RCT-4B`: `HerrHruby/RCT-4B`
 
 Stage I Training Set: `HerrHruby/acemath_rl_4b_inst_hard`
 
